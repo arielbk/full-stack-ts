@@ -34,6 +34,62 @@
       "createdAt": "2022-03-23T03:55:59.614Z",
       "updatedAt": "2022-03-23T03:55:59.614Z",
       "id": "tweet-1220baa2-2092-4ed8-a72c-91757dc508f7"
+    },
+    {
+      "message": "My first tweet!!!",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:33:38.110Z",
+      "updatedAt": "2022-12-17T11:33:38.110Z",
+      "id": "tweet-5f941e5f-4954-44c6-9c42-eee53dc842b0"
+    },
+    {
+      "message": "Trying this out",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:39:40.117Z",
+      "updatedAt": "2022-12-17T11:39:40.117Z",
+      "id": "tweet-f328a732-b453-4179-a34d-90140dcc6091"
+    },
+    {
+      "message": "And again?",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:40:12.724Z",
+      "updatedAt": "2022-12-17T11:40:12.724Z",
+      "id": "tweet-fd03d7cf-2e23-4d35-b5e8-21e961f3ba1b"
+    },
+    {
+      "message": "Does this refetch?",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:47:35.481Z",
+      "updatedAt": "2022-12-17T11:47:35.481Z",
+      "id": "tweet-332ae3d7-342c-4ed4-b8e4-e483320c33b2"
+    },
+    {
+      "message": "It does NOT seem to",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:47:43.682Z",
+      "updatedAt": "2022-12-17T11:47:43.682Z",
+      "id": "tweet-903b682a-5f9f-479c-9d55-9793eaea48de"
+    },
+    {
+      "message": "Or maybe it does",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:48:07.450Z",
+      "updatedAt": "2022-12-17T11:48:07.450Z",
+      "id": "tweet-8b35ee32-0af7-4d8c-ae41-e0985af4023e"
+    },
+    {
+      "message": "Now?",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:48:12.558Z",
+      "updatedAt": "2022-12-17T11:48:12.558Z",
+      "id": "tweet-213cc1d1-3073-4a22-bb26-98eca709cc57"
+    },
+    {
+      "message": "So-called boiling the ocean",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-12-17T11:49:33.701Z",
+      "updatedAt": "2022-12-17T11:49:33.701Z",
+      "id": "tweet-bc0ae410-47bf-47a3-8c5f-de633c22c93b"
     }
   ],
   "users": [
@@ -146,6 +202,13 @@
       "createdAt": "2022-03-23T03:55:59.617Z",
       "updatedAt": "2022-03-23T03:55:59.617Z",
       "id": "favorite-a4e781ad-1c7b-4e62-b9dd-66b4e36e390b"
+    },
+    {
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "tweetId": "tweet-bc0ae410-47bf-47a3-8c5f-de633c22c93b",
+      "createdAt": "2022-12-17T13:28:09.449Z",
+      "updatedAt": "2022-12-17T13:28:09.449Z",
+      "id": "favorite-06a94c99-66fc-43dd-bea2-6eaabb78ff8a"
     }
   ],
   "hashtagTrends": [

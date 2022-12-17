@@ -4,6 +4,8 @@ import Header from './Header';
 import LeftSidebar from './LeftSidebar';
 import RightBar from './RightBar';
 import Timeline from './Timeline';
+import { gql } from '@apollo/client';
+import { useGetCurrentUserQuery } from './generated/graphql';
 
 const CURRENT_USER = {
   name: 'Stu Dent',
@@ -41,14 +43,28 @@ const TRENDS = [
   },
 ];
 
-const SUGGESTIONS = [
-  {
-    name: 'TypeScript Project',
-    handle: 'TypeScript',
-    avatarUrl: 'http://localhost:3000/static/ts-logo.png',
-    reason: 'Because you follow @MichaelLNorth',
-  },
-];
+export const GET_CURRENT_USER = gql`
+  query GetCurrentUser {
+    currentUser {
+      id
+      name
+      handle
+      avatarUrl
+      createdAt
+      stats {
+        tweetCount
+        followerCount
+        followingCount
+      }
+    }
+    suggestions {
+      name
+      handle
+      avatarUrl
+      reason
+    }
+  }
+`;
 
 const App: React.FC = () => {
   const { favorites: rawFavorites } = CURRENT_USER;
@@ -56,17 +72,22 @@ const App: React.FC = () => {
     .map((f) => f.tweet?.id)
     .filter(isDefined);
 
+  const { loading, error, data } = useGetCurrentUserQuery();
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  if (!data) return <p>No data.</p>;
+  const { currentUser, suggestions = [] } = data;
+
   return (
     <div>
-      <LeftSidebar currentUser={CURRENT_USER} />
-      <Header currentUser={CURRENT_USER} />
-
+      <LeftSidebar currentUser={{ ...CURRENT_USER, ...currentUser }} />
+      <Header currentUser={currentUser} />
       <div id="container" className="wrapper nav-closed">
         <Timeline
           currentUserId={CURRENT_USER.id}
           currentUserFavorites={favorites}
         />
-        <RightBar trends={TRENDS} suggestions={SUGGESTIONS} />
+        <RightBar trends={TRENDS} suggestions={suggestions} />
       </div>
     </div>
   );

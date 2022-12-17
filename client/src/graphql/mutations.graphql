@@ -1,0 +1,17 @@
+mutation CreateFavorite($favorite: FavoriteInput!) {
+  createFavorite(favorite: $favorite) {
+    id
+  }
+}
+
+mutation DeleteFavorite($favorite: FavoriteInput!) {
+  deleteFavorite(favorite: $favorite) {
+    id
+  }
+}
+
+mutation CreateNewTweet($userId: String!, $body: String!) {
+  createTweet(userId: $userId, body: $body) {
+    id
+  }
+}

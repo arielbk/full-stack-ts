@@ -1,4 +1,3 @@
-import { gql } from '@apollo/client';
 import * as React from 'react';
 import ComposePanel from './ComposePanel';
 import { useGetTimelineTweetsQuery } from './generated/graphql';
@@ -8,26 +7,6 @@ export interface TimelineProps {
   currentUserId: string;
   currentUserFavorites: string[];
 }
-
-export const GET_TIMELINE_TWEETS = gql`
-  query GetTimelineTweets {
-    tweets {
-      id
-      body
-      stats {
-        favoriteCount
-        retweetCount
-        commentCount
-      }
-      createdAt
-      author {
-        name
-        handle
-        avatarUrl
-      }
-    }
-  }
-`;
 
 const Timeline: React.FC<TimelineProps> = ({
   currentUserFavorites,

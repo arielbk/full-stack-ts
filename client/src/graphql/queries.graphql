@@ -1,0 +1,58 @@
+query GetCurrentUser {
+  currentUser {
+    id
+    name
+    handle
+    avatarUrl
+    createdAt
+    stats {
+      tweetCount
+      followerCount
+      followingCount
+    }
+    favorites {
+      tweet {
+        id
+      }
+    }
+  }
+  suggestions {
+    name
+    handle
+    avatarUrl
+    reason
+  }
+  trends {
+    ... on TopicTrend {
+      tweetCount
+      topic
+      quote {
+        title
+        imageUrl
+        description
+      }
+    }
+    ... on HashtagTrend {
+      tweetCount
+      hashtag
+    }
+  }
+}
+
+query GetTimelineTweets {
+  tweets {
+    id
+    body
+    stats {
+      favoriteCount
+      retweetCount
+      commentCount
+    }
+    createdAt
+    author {
+      name
+      handle
+      avatarUrl
+    }
+  }
+}

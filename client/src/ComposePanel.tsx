@@ -1,23 +1,16 @@
-import { gql } from '@apollo/client';
 import {
-  faImage,
-  faFilm,
   faChartBar,
   faComment,
+  faFilm,
+  faImage,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
-import { GET_CURRENT_USER } from './App';
-import { useCreateNewTweetMutation } from './generated/graphql';
-import { GET_TIMELINE_TWEETS } from './Timeline';
-
-export const CREATE_NEW_TWEET = gql`
-  mutation CreateNewTweet($userId: String!, $body: String!) {
-    createTweet(userId: $userId, body: $body) {
-      id
-    }
-  }
-`;
+import {
+  refetchGetCurrentUserQuery,
+  refetchGetTimelineTweetsQuery,
+  useCreateNewTweetMutation,
+} from './generated/graphql';
 
 export interface ComposePanelProps {
   currentUser: { id: string };
@@ -33,7 +26,10 @@ const ComposePanel: React.FC<ComposePanelProps> = ({ currentUser }) => {
     const body = textarea.value;
     createNewTweet({
       variables: { userId: currentUser.id, body },
-      refetchQueries: [GET_TIMELINE_TWEETS, GET_CURRENT_USER],
+      refetchQueries: [
+        refetchGetTimelineTweetsQuery(),
+        refetchGetCurrentUserQuery(),
+      ],
     })
       .then(() => {
         textarea.value = '';
